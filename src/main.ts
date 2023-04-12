@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { ClassSerializerInterceptor, ValidationPipe, VersioningType } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
-import { BearerGuard } from './security/bearer/bearer.guard.js';
+import { BearerGuard } from './security/bearer/bearer.guard';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

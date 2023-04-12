@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { StarshipService } from './starship.service';
 import { CreateStarshipDto } from './dto/create-starship.dto';
 import { UpdateStarshipDto } from './dto/update-starship.dto';
-import { Starship } from './entities/starship.entity.js';
+import { Starship } from './entities/starship.entity';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('starship')

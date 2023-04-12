@@ -1,8 +1,8 @@
 import { AfterLoad, Column, Entity, ManyToOne } from 'typeorm';
-import { DefaultEntity } from '../../utils/default-entity.js';
-import { Planet } from '../../planet/entities/planet.entity.js';
-import { Starship } from '../../starship/entities/starship.entity.js';
-import dayjs from 'dayjs';
+import { DefaultEntity } from '../../utils/default-entity';
+import { Planet } from '../../planet/entities/planet.entity';
+import { Starship } from '../../starship/entities/starship.entity';
+import * as dayjs from 'dayjs';
 
 @Entity({ name: 'booking' })
 export class Booking extends DefaultEntity {

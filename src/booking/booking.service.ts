@@ -2,10 +2,10 @@ import { Injectable, NotFoundException, UnprocessableEntityException } from '@ne
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PlanetService } from '../planet/planet.service.js';
-import { StarshipService } from '../starship/starship.service.js';
+import { PlanetService } from '../planet/planet.service';
+import { StarshipService } from '../starship/starship.service';
 import { DeleteResult, Repository } from 'typeorm';
-import { Booking } from './entities/booking.entity.js';
+import { Booking } from './entities/booking.entity';
 
 @Injectable()
 export class BookingService {
@@ -23,11 +23,12 @@ export class BookingService {
       throw new UnprocessableEntityException('Both destination and starship should contains existing uuids');
     }
 
-    const booking: Partial<Booking> = {
-      ...createBookingDto,
-      starship,
-      destination,
-    };
+    const booking: Booking = new Booking();
+    booking.active = createBookingDto.active;
+    booking.departureDate = createBookingDto.departureDate;
+    booking.traveller = createBookingDto.traveller;
+    booking.destination = destination;
+    booking.starship = starship;
 
     return this.bookingRepository.save(booking);
   }

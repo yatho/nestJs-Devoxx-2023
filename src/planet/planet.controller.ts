@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode } from '@ne
 import { PlanetService } from './planet.service';
 import { CreatePlanetDto } from './dto/create-planet.dto';
 import { UpdatePlanetDto } from './dto/update-planet.dto';
-import { Planet } from './entities/planet.entity.js';
+import { Planet } from './entities/planet.entity';
 import { DeleteResult } from 'typeorm';
 import { ApiTags } from '@nestjs/swagger';
 

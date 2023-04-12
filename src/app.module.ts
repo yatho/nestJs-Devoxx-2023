@@ -6,7 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { BookingModule } from './booking/booking.module';
 import { SecurityModule } from './security/security.module';
-import configuration from './config/configuration.js';
+import configuration from './config/configuration';
 import configurationSchema from './config/schema';
 
 @Module({

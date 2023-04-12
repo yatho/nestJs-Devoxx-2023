@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, ParseUUIDPipe } from
 import { BookingService } from './booking.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
-import { Booking } from './entities/booking.entity.js';
+import { Booking } from './entities/booking.entity';
 import { DeleteResult } from 'typeorm';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 

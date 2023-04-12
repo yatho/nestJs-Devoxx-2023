@@ -1,4 +1,4 @@
-import { DefaultEntity } from '../../utils/default-entity.js';
+import { DefaultEntity } from '../../utils/default-entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity({ name: 'starship' })
