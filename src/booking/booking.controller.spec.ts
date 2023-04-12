@@ -136,7 +136,7 @@ describe('BookingController', () => {
       // --- ASSERT
       expect(bookingRepoFindOneSpy).toHaveBeenCalledWith({
         where: { uuid: booking.uuid },
-        relations: ['starship', 'planet'],
+        relations: ['starship', 'destination'],
       });
       expect(planetRepoFindOneByUuidSpy).toHaveBeenCalledWith({ uuid: destination.uuid });
       expect(starshipRepoFindOneByUuidSpy).toHaveBeenCalledWith({ uuid: starship.uuid });

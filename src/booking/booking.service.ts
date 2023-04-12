@@ -40,7 +40,7 @@ export class BookingService {
   findOneByUuid(uuid: string): Promise<Booking> {
     return this.bookingRepository.findOne({
       where: { uuid },
-      relations: ['starship', 'planet'],
+      relations: ['starship', 'destination'],
     });
   }
 
