@@ -41,6 +41,6 @@ async function bootstrap() {
   const configService = app.get<ConfigService>(ConfigService);
   app.useGlobalGuards(new BearerGuard(configService));
 
-  await app.listen(3000);
+  await app.listen(configService.get('port'));
 }
 bootstrap();
