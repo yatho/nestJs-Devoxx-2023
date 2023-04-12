@@ -20,9 +20,6 @@ async function bootstrap() {
     .addBearerAuth()
     .build();
 
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
-
   //------- IN & OUT
   // Enables global behaviors on incoming DTO
   app.useGlobalPipes(
@@ -40,6 +37,9 @@ async function bootstrap() {
   // SECURITY
   const configService = app.get<ConfigService>(ConfigService);
   app.useGlobalGuards(new BearerGuard(configService));
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
   await app.listen(configService.get('port'));
 }
