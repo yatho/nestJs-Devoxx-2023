@@ -1,8 +1,10 @@
 import { DefaultEntity } from '../../utils/default-entity.js';
-import { Entity } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
 @Entity({ name: 'planet' })
 export class Planet extends DefaultEntity {
+  @Column()
   name: string;
+  @Column()
   distanceToEarth: number;
 }
