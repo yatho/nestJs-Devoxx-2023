@@ -4,6 +4,7 @@ import { PlanetModule } from './planet/planet.module';
 import { StarshipModule } from './starship/starship.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { BookingModule } from './booking/booking.module';
 @Module({
   imports: [
     HealthModule,
@@ -22,6 +23,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
         } as TypeOrmModuleOptions;
       },
     }),
+    BookingModule,
   ],
   controllers: [],
   providers: [],

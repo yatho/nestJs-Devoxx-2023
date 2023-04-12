@@ -1,0 +1,13 @@
+import { PartialType, ApiProperty } from '@nestjs/swagger';
+import { Expose } from 'class-transformer';
+import { IsNotEmpty, IsUUID, IsOptional } from 'class-validator';
+import { CreateBookingDto } from './create-booking.dto.js';
+
+export class UpdateBookingDto extends PartialType(CreateBookingDto) {
+  @ApiProperty()
+  @Expose()
+  @IsNotEmpty()
+  @IsUUID()
+  @IsOptional()
+  uuid: string;
+}
